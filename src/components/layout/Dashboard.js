@@ -81,6 +81,7 @@ const Dashboard = () => {
           ></i>
         </button>
       </div>
+      <p>then click on the circles below</p>
       <Calendar year={year} setMoodOnDate={setMoodOnDate} />
     </div>
   );
