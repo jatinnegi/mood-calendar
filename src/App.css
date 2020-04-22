@@ -1,0 +1,191 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --laugh-color: #4a573a;
+  --smile-color: #74b4bd;
+  --meh-color: #afa088;
+  --frown-color: #f7c4a5;
+  --sad-tear-color: #b23a48;
+  --nav-color: #324376;
+  --cell-color: #888;
+}
+
+.container {
+  width: 80%;
+  margin: 8vh auto;
+}
+
+nav {
+  background: var(--nav-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8vh;
+  width: 100%;
+}
+
+nav .nav-container {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-container .nav-header a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+nav .nav-container .burger {
+  cursor: pointer;
+}
+
+nav .nav-container .burger div {
+  height: 3px;
+  width: 25px;
+  margin: 3px;
+  background: #fff;
+}
+
+.container .dashboard {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.container .dashboard * {
+  margin: 10px 0;
+}
+
+.container .dashboard .mood-container button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 50%;
+  color: #000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  line-height: 20px;
+  padding: 0;
+  margin: 0 5px;
+  height: 48px;
+  width: 48px;
+  text-align: center;
+  outline: none;
+}
+
+.container .dashboard .mood-container i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.container .dashboard .mood-container button i:active {
+  transform: scale(0.9);
+}
+
+.container .dashboard .mood-container button:first-child i {
+  color: var(--laugh-color);
+}
+.container .dashboard .mood-container button:nth-child(2) i {
+  color: var(--smile-color);
+}
+.container .dashboard .mood-container button:nth-child(3) i {
+  color: var(--meh-color);
+}
+.container .dashboard .mood-container button:nth-child(4) i {
+  color: var(--frown-color);
+}
+
+.container .dashboard .mood-container button:last-child i {
+  color: var(--sad-tear-color);
+}
+
+.container .dashboard .mood-container button:first-child.selected {
+  background: var(--laugh-color);
+}
+.container .dashboard .mood-container button:nth-child(2).selected {
+  background: var(--smile-color);
+}
+.container .dashboard .mood-container button:nth-child(3).selected {
+  background: var(--meh-color);
+}
+.container .dashboard .mood-container button:nth-child(4).selected {
+  background: var(--frown-color);
+}
+.container .dashboard .mood-container button:last-child.selected {
+  background: var(--sad-tear-color);
+}
+
+.container .dashboard .mood-container button.selected i {
+  color: #fff;
+}
+
+.dashboard .calendar {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.dashboard .calendar .month {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard .calendar .month .month-name {
+  font-size: 30px;
+}
+
+.dashboard .calendar .month table {
+  font-size: 16px;
+  table-layout: fixed;
+}
+
+.dashboard .calendar .month table tbody tr td.date {
+  background: var(--cell-color);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dashboard .calendar .month table tbody tr td.date.laugh {
+  background: var(--laugh-color);
+}
+.dashboard .calendar .month table tbody tr td.date.smile {
+  background: var(--smile-color);
+}
+.dashboard .calendar .month table tbody tr td.date.meh {
+  background: var(--meh-color);
+}
+.dashboard .calendar .month table tbody tr td.date.frown {
+  background: var(--frown-color);
+}
+.dashboard .calendar .month table tbody tr td.date.sadTear {
+  background: var(--sad-tear-color);
+}
+
+@media screen and (max-width: 1185px) {
+  .dashboard .calendar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 798px) {
+  .dashboard .calendar {
+    grid-template-columns: 1fr;
+  }
+}
